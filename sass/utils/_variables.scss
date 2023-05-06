@@ -1,3 +1,30 @@
+/* ----- Media breakpoints ----- */
+
+$breakpointMobile: 480px;
+$breakpointTablet: 768px;
+$breakpointDesktop: 1200px;
+
+/* ----- text ----- */
 $mainFont: "Roboto", sans-serif;
 $secFont: "Raleway", "Oleo Script", sans-serif;
+
+/*   Spaces   */
+
+$padding-between: 94px;
+
+$padding-between-mobile: 60px;
+
+$padding-left-right: 200px;
+
+/*   Other atributes   */
+
+$cursor-pointer: pointer;
+
+%transition {
+  transition-property: fill, color, background-color, border-color, transform,
+    box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0s;
+}
 

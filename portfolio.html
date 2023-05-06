@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WebStudio -page, autor: Ireneusz Barański" />
+    <title>WebStudio-main page</title>
+
+    <!-- ----- Fonts ----- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ----- Normalize ----- -->
+    <link rel="stylesheet" href="./css/modern-normalize.min.css" />
+
+    <!-- ----- Styles ----- -->
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+
+  <body>
+
+    <!-- ----- ------------------------------------------------>
+    <!-- ----- Section - PAGE HEADER -----                   -->
+   
+    <header class="page-header">
+        <div class=" container l-grid l-grid__page-header">
+                
+            <div class="logo page-header__logo">
+                <a class="logo__logotype link" href="./index.html" >
+                    <span class="logo__logotype logo__logotype--brand-color">Web</span> 
+                    <span class="logo__logotype logo__logotype--dark-theme">Studio</span>
+                </a>
+            </div>
+    
+            <!-- ----- ------------------------------------------------>
+            <!-- 2nd page-header item - navigation -->
+            <nav class="page-header__nav nav__text">
+                <ul class="nav list-style">
+                    <li class="nav__item">
+                        <a class="link nav__link" href="./index.html">Agencja</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="link nav__link link--active transition" href="./portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="link nav__link" href="#/">Kontakt</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- ----- ------------------------------------------------>
+            <!-- 3rd page-header item - contact links -->
+            <div class="contact contact__text">
+                    <ul class="contact__display list-style">
+                        <li>
+                            <a class="contact__item link" href="mailto:info@devstudio.com">
+                                <svg class="icon contact__icon-mail" width="16" height="12">
+                                    <use href="./images/icons.svg#icon-envelope">
+                                    </use>
+                                </svg>
+                                info@devstudio.com
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="contact__item link" href="tel:+48111111111">
+                                <svg class="icon contact__icon-tel " width="10" height="16">
+                                    <use href="./images/icons.svg#icon-smartphone">
+                                    </use>
+                                </svg>
+                                +48 111 111 111
+                            </a>
+
+                        </li>
+
+                    </ul>
+                
+            </div> 
+        </div>             
+    </header>
+
+    <main>
+    <!-- ----- ------------------------------- ----- -->
+    <!-- ----- 1st Section - PORTFOLIO ----- -->
+    <!-- inherited classes: section, container, card -->
+    <!-- specyfic class     -->
+
+        <section class="section">
+            <div class="container">
+
+            <!-- filter buttons - filter by label (web page, app, graphic, marketing, )-->
+                <ul class="l-grid l-grid__btns list__style">                    
+                    <li>
+                        <button type="button" class="btn btn-portfolio transition">Wszystkie</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-portfolio transition">Strony</button>         
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-portfolio transition">Aplikacje</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-portfolio transition">Dizajn</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-portfolio transition">Marketing</button>
+                    </li>
+
+                </ul>
+
+        <!-- ----- ------------------------------------------------>
+            <!-- ----- Portfolio cards set - flex wrap 3/row  -----                      -->
+    
+                <ul class="l-grid l-grid--wrap">
+                
+                <!-- ----- 1st potfolio card - Technocrack - web-page ----- -->    
+                    <li class="list__item">
+                        <figure id="web-page" class="portfolio-card transition" >
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-technocrack.jpg" 
+                                    alt="zdjęcie pojedynczego przedmiotu na jasnym tle: ekran laptopa wyśwuetla stronę internetową przedstawiająca 3 wizytówki zespołu" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> Technocrack jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>   
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Technocrack</h3>
+                                    <h4 class="portfolio-card__label">Strona internetowa</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </li>
+
+                <!-- ----- 2nd potfolio card - New-Orleans-vs-Golden-Star-graphic - graphic ----- -->
+                    <li class="list__item">
+                        <figure id="graphic" class="portfolio-card transition">
+                            <a class="link" href="#/">                            
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-New-Orleans-vs-Golden-Star-graphic.jpg" 
+                                    alt="dwóch koszykarzy walczy o piłke w trakcie meczy, postacie wycięte z meczu, osadzone na tle niebieskiego dynamicnzego maziaja" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+                                    
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Grafika New Orlean vs Golden Star</h3>
+                                    <h4 class="portfolio-card__label">Dizajn</h4>
+                                </figcaption>
+                            </a>
+                        </figure>    
+                    </li>
+
+                <!-- ----- 3rd potfolio card - seafood-restaurant - app ----- -->
+                    <li class="list__item">
+                        <figure id="app" class="portfolio-card transition">
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-seafood-restaurant.jpg" 
+                                    alt="logo restauracji przedstawia: - stylizowany text: The Seafood  Restaurant. - text na tle dużej szarej ryby" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Restauracja Seafood</h3>
+                                    <h4 class="portfolio-card__label">Aplikacja</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                        
+                    </li>
+
+                <!-- ----- 4th potfolio card - prime-project - marketing ----- -->
+                    <li class="list__item">
+                        <figure id="marketing" class="portfolio-card transition">
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-prime-project.jpg" 
+                                    alt="zdjęcie pojedynczego przedmiotu na jasnym tle: słuchawek nausznych bezprzewodowych w kolorze czarnym" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+                                
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Projekt Prime</h3>
+                                    <h4 class="portfolio-card__label">Marketing</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </li>
+
+                <!-- ----- 5th potfolio card - boxes-project - app ----- -->
+                    <li class="list__item">
+                        <figure id="app" class="portfolio-card transition">
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img  src="images/portfolio-project-boxes-project.jpg" 
+                                    alt="kolorowa grafika 3D przedstawia dwa pudełka o kształcie prostopadłościanów ozdobione tekstami promocyjnymi na jasnym tle" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+                                
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Projekt Boxes</h3>
+                                    <h4 class="portfolio-card__label">Aplikacja</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </li>
+
+                <!-- ----- 6th potfolio card - inspiration-has-no-borders - web-page ----- -->
+                    <li class="list__item">
+                        <figure id="web-page"class="portfolio-card transition">
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-inspiration-has-no-borders.jpg" 
+                                    alt="zdjęcie pojedynczego przedmiotu na jasnym tle: monitor na pojedynczej srebrnej nóźce wyświetla stornę internetową, tekst artykółów na czarnym tle" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+                
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Inspiration has no Borders</h3>
+                                    <h4 class="portfolio-card__label">Strona internetowa</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </li>
+
+                <!-- ----- 7th potfolio card - limited-edition-magazine - graphic ----- -->
+                    <li class="list__item">
+                        <figure id="graphic" class="portfolio-card transition">
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-limited-edition-magazine.jpg" 
+                                    alt="zdjęcie pojedynczego przedmiotu na jasnym tle: otewarta książka z obrazkami i tekstami"  
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+                                
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Magazyn Limited Edition</h3>
+                                    <h4 class="portfolio-card__label">Dizajn</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </li>
+
+                <!-- ----- 8th potfolio card - lab-project - marketing ----- -->
+                    <li class="list__item">
+                        <figure id="marketing" class="portfolio-card transition">
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-lab-project.jpg" 
+                                    alt="zdjęcie pojedynczego przedmiotu na jasnym tle: plakietka ze stylizowanym napisem na lnianym sznureczku" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Projekt LAB</h3>
+                                    <h4 class="portfolio-card__label">Marketing</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </li>
+
+                <!-- ----- 9th potfolio card - growing-bussiness - app ----- -->
+                    <li class="list__item">
+                        <figure id="app" class="portfolio-card transition">
+                            <a class="link" href="#/">
+                                <div class="portfolio-card__header"> 
+                                    <img src="images/portfolio-project-growing-bussiness.jpg" alt="kompozycja: męskie dłonie piszące coś na otwartym laptopie, zdjęcie na monitorze" 
+                                    height="294";
+                                    width="370";
+                                    > 
+                                    <div class="overlay">
+                                        <p class="portfolio-card__description"> WebStudio- jest popularną platformą wykorzystywaną do rozpowszechniania koronawirusa. Firmy wykorzystują tę platformę do celów szpiegowskich i ataków na niezabezpieczone serwery konkurencji</p>
+                                    </div>
+                                </div>
+                                
+                                <figcaption class="portfolio-card__body">
+                                    <h3 class="portfolio-card__title">Growing Business</h3>
+                                    <h4 class="portfolio-card__label">Aplikacja</h4>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- ----- ----- --------- ----- ----- -->        
+    <!-- ----- ----- FOOTER SECTION ----- ----- -->
+    <!-- ----- cont. logo + address box / social media icons ----- -->
+    <!-- ----- ----- --------- ----- ----- -->
+
+    <footer class="footer ">
+        <div class="container l-grid l-grid__footer"> <!-- grid division: 1/2, 1/2, 1 -->
+            
+            <!-- 1st footer item - box cont. logo + address box -->
+            <div class="footer__item">
+                <div class="logo footer__logo">
+                    <a class="link" href="./index.html">
+                        <span class="logo__logotype logo__logotype--brand-color">Web</span>
+                        <span class="logo__logotype logo__logotype--light-theme">Studio</span>
+                    </a>        
+                </div>
+                <address class="address">
+                    <p> m. Warszawa, Aleje Jerozolimskie 21 </p>
+                    <p><a class="link address--cl-grey" href="mailto:info@example.com">info@example.com</a></p>
+                    <p><a class="link address--cl-grey" href="tel:+48111111111">+48 111 111 111</a></p>
+                </address>
+            </div> 
+
+            <!-- 2nd footer item - cont. label + social media icons list  -->
+
+            <div class="footer__item"> 
+
+                <h3 class="footer__label" >DOŁĄCZ DO NAS
+                </h3>
+                <ul class="footer__round-btn">
+                                                    
+                    <!-- social media - 1st icon -insta-->
+                    <li>
+                        <a class="link round-btn round-btn--dark-theme transition" href="#instagram-link" > 
+                            
+                            <svg class="round-btn__icon" 
+                            width="20" height="20">
+                                <use href="./images/icons.svg#icon-instagram"></use>
+                            </svg>
+                            
+                        </a>
+                    </li>   
+
+                    <!-- social media - 2nd icon -twitter -->    
+                        <li>
+                            <a class="link round-btn round-btn--dark-theme transition" href="#twitter-link" > 
+                                <svg class="round-btn__icon" 
+                                width="20" height="20">
+                                    <use href="./images/icons.svg#icon-twitter-1"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        
+                    <!-- social media - 3rd icon - facebook -->
+                        <li>
+                            <a class="link round-btn round-btn--dark-theme transition" href="#facebook-link" > 
+                                <svg class="round-btn__icon" 
+                                width="20" height="20">
+                                    <use href="./images/icons.svg#icon-facebook-1"></use>
+                                </svg>
+                            </a>
+                        </li>
+
+                    <!-- social media - 4th icon - linkedIn -->  
+                        <li>
+                            <a class="link round-btn round-btn--dark-theme transition" href="#footerlinkedin-link" > 
+                                <svg class="round-btn__icon" 
+                                width="20" height="20">
+                                    <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>  
+                </ul>
+            </div>
+
+            <div class="footer__item">
+                <form class="footer__item footer-form" name="newsletter_email" action="/singnup" method="post" autocomplete="off" target="_self" validate>
+                    <label class="footer__label" for="email" >ZAPISZ SIĘ DO NEWSLETTERA
+                    </label>
+                    <div class="footer-form__grid">
+                        <input  
+                        class="footer-form__input transition" 
+                        type="email"
+                        id="email" 
+                        name="newsletter-user-email" 
+                        placeholder="E-mail, example@mail.com" 
+                        />
+                        <button class="btn btn__txt" type="submit">
+                            <div class="btn__grid">
+                                <span class="btn__text">
+                                Zapisz się
+                                </span>
+                                <svg class="btn__icon" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-icon-send"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </label>
+                            </div>                             
+                            
+                        </p>
+
+                </form>
+            </div>
+        </div>
+    </footer>
+  </body>

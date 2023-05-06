@@ -1,0 +1,95 @@
+/* ----- page layout ----- */
+/* ----- - division by sections, display container and grid ----- */
+.section{
+    padding-top: 94px;
+    padding-bottom: 94px;
+
+    &__bg-img {
+        width:auto;
+        height: 600px;
+        margin: 0, auto;
+        
+        background-position: center;          
+        background-color: getColor('bg-dark-main');
+        background-image: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.4)), 
+        url(../images/heder-banner-opt-people-teams-at-work-.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: cover, cover;
+        
+    }
+
+    &--bottom-padding-short {padding-bottom: 0px;}
+
+    &--bg-light-theme{
+        margin-left: auto;
+        margin-right: auto;
+        background-position: 50% 50%;
+        background-repeat: repeat;
+        background-size:cover;
+        background-position-x: center;
+    
+        background-color: getColor('bg-light-sec');
+    }
+
+    &__header {
+        text-align: center;
+        
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.17;
+        letter-spacing: 0.03em;
+        padding-bottom: 50px;
+        /*background-color: aquamarine;*/
+    }
+
+    &__header-big {
+        text-align: center;
+
+        font-size: 44px;
+        font-weight: 900;
+        line-height: 1.36;
+        letter-spacing: 0.06em;
+        
+        color: getColor('font-light-main'); 
+    }   
+}
+.container {
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1200px;
+}
+
+.l-grid{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;  
+    gap: 30px 30px;
+    list-style-type: none;
+
+    &__page-header {height: 80px;}
+
+    &__btns{
+        gap: 0px 8px;
+        height: auto;
+        margin-bottom: 50px;
+    }
+
+    &--wrap {
+        flex-wrap: wrap; 
+        flex-basis: calc((100% - 60px)/3);
+    }
+
+    &--direction-column {
+        height: 600px;
+        flex-direction: column;
+    }
+
+    &__footer {
+        gap: 0px 70px;
+        align-content: flex-start;
+        align-items: baseline;
+    }
+}

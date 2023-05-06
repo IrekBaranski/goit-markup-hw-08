@@ -1,0 +1,21 @@
+.logo { 
+    display: inline-block;
+
+    &__logotype {
+        text-decoration: none;
+        font-family: $secFont;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.17;
+        letter-spacing: 0.03em;
+       
+
+        &--brand-color {color: getColor('logotype-accent');}
+
+        &--dark-theme {color: getColor('logotype-dark');}
+
+        &--light-theme {color: getColor('logotype-light');}
+    }  
+
+    
+}

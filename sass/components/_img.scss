@@ -1,0 +1,28 @@
+
+
+
+.contact__icon-mail {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+
+    fill: inherit; 
+    /*var(--second-color-dark-grey);*/
+}
+.contact__icon-tel {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+
+    fill: inherit;
+    /*var(--second-color-dark-grey);*/
+}
+.contact__icon-mail:hover,
+.contact__icon-mail:focus,
+.contact__icon-tel:hover,
+.contact__icon-tel:focus {
+    color: var(--brand-color-blue);
+    fill:var(--brand-color-blue);
+}

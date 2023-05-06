@@ -1,0 +1,65 @@
+/*$colorsPalette: (
+'brand-blue': rgb(33, 150, 243, 1),
+'brand-blue-a09': rgb(33, 150, 243, 0.9),
+
+'black-main':rgb(33, 33, 33,1),
+'black-main-a02': rgba(33, 33, 33, 0.2),
+'black-sec': rgb(47, 48, 58),
+'black-default': black,
+
+'grey-main': rgb(117, 117, 117),
+'grey-main-a05': rgb(117, 117, 117, 0.5),
+'grey-sec': rgb(174, 176, 183),
+
+'white-default': white,
+'white1': rgb(245, 244, 250),
+'white2': rgb(238, 238, 238),
+'white3'
+
+'white-default-a01': rgba(255, 255, 255, 0.1),
+$secPaletteClWhite: rgb(238, 238, 238),
+@function getColorPalette($key) {
+    @return map-get($colorsPalette, $key);
+}
+);*/
+
+
+$colors: (
+    'main': rgb(33, 33, 33,1),
+
+    'accent':rgb(33, 150, 243, 1),
+    'accent-a09': rgb(33, 150, 243, 0.9), //or rgba(getColor('accent', .09)
+    
+    'font-dark': rgb(33, 33, 33,1),
+    'font-grey': rgb(117, 117, 117),
+    'font-grey-a05': rgba(117, 117, 117, 0.5),
+    'font-light-main': white,
+    'font-light-main-a06': rgba(255, 255, 255, 0.6),
+    'font-light-main-a03': rgba(255, 255, 255, 0.3),
+
+    'bg-dark-main': rgb(47, 48, 58),
+    'bg-dark-main-a08': rgba(47, 48, 58, 0.8),
+    'bg-dark-main-a04': rgba(0, 0, 0, 0.4),
+    'bg-light-main': white,
+    'bg-light-sec': rgb(245, 244, 250),
+    'bg-light-main-a01': rgba(255, 255, 255, 0.1),
+
+    'logotype-accent':rgb(33, 150, 243),
+    'logotype-dark': black,
+    'logotype-light': white,
+    
+    'border-light1': rgb(238, 238, 238),
+    'border-light2': rgb(236, 236, 236),
+    'border-light-main': white,
+    'border-light-main-a06': rgba(255, 255, 255, 0.6),
+    'border-light-main-a03': rgba(255, 255, 255, 0.3),
+    'border-dark': rgba(33, 33, 33, 1),
+
+    'border-dark-a02': rgba(33, 33, 33, 0.2),
+
+    'svg-path-main': rgba(175, 177, 183, 1),
+    'svg-path-sec': white,
+);
+@function getColor($key) {
+    @return map-get($colors, $key);
+}

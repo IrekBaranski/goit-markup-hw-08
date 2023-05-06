@@ -1,0 +1,152 @@
+.btn {
+    display: block;
+    
+    width: 200px;
+    height: 50px;
+    border-style: none;
+    border-radius: 4px;    
+    background-color: getColor('accent');
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    cursor: pointer;
+    transition-property: transform;
+
+    &__txt{
+        text-align: center;
+        
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.88;
+        letter-spacing: 0.06em;
+        color: getColor('font-light-main');
+    }
+
+    &__grid{
+        padding: 10px 26px 10px 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__icon{
+        display: inline-block;
+        fill: getColor('font-light-main');
+    }
+
+    &-portfolio{
+        height: 38px;
+        width:max-content;
+        padding: 6px 22px;
+
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.62;
+        letter-spacing: 0.03em;
+
+        color: getColor('font-dark');
+        background-color: getColor('bg-light-sec');
+        box-shadow: none;
+        
+        transition-property: background-color, color;
+
+        &:hover,
+        &:focus {
+            background-color: getColor('accent');
+            color: getColor('font-light-main');
+            box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+        }
+    }
+
+}
+
+.round-btn {
+    display: block;
+    
+    height: 44px;
+    width: 44px;
+    border-style: none;
+    border-radius: 50%;
+    background-color: getColor('bg-light-main');
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--light-theme{
+        background-color: getColor('bg-light-main');
+        fill: getColor('svg-path-main');
+        transition-property: background-color, fill;
+
+        /*&:focus,
+        &:hover{
+        fill:  getColor('svg-path-sec');
+        background-color: getColor('accent');
+        }*/
+    }
+
+    &--dark-theme{
+        background-color: getColor('bg-light-main-a01');
+        fill: getColor('svg-path-sec');
+        transition-property: background-color;
+
+        &:focus,
+        &:hover{
+        background-color: getColor('accent');
+        }
+    }
+
+    &__icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    &:focus,
+    &:hover{
+    fill:  getColor('svg-path-sec');
+    background-color: getColor('accent');
+    }
+
+    /*background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;*/
+    
+    
+
+
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.extd-btn {
+    display: block;
+    
+    width: 168px;
+    height: 90px;
+    border-radius: 4px;
+    border: 1px solid getColor('svg-path-main');
+    fill: getColor('svg-path-main');
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition-property: border-color, fill;
+
+    &__icon{
+        display: block;
+        fill: inherit;
+        width: 100px;
+        height: 60px;
+    }
+    
+    &:hover,
+    &:focus{
+        fill: getColor('accent');
+        border-color: getColor('accent');
+    }
+    
+}

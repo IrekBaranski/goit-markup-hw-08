@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WebStudio -page, autor: Ireneusz Barański" />
+    <title>WebStudio-main page</title>
+
+    <!-- ----- Fonts ----- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ----- Normalize ----- -->
+    <link rel="stylesheet" href="./css/modern-normalize.min.css" />
+
+    <!-- ----- Styles ----- -->
+    <!-- ZMIANA NA href="./css/main.min.css" ./css/styles.css-->
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+
+  <body>
+    <!-- ----- ------------------------------------------------>
+    <!-- ----- Section - PAGE HEADER ----            --> 
+    <!-- ----- (BEM) default blocks: section, container, logo 
+        ustawienie defaultowe:
+        1) HEADER jest jeden wspólny dla każdej podstrony -> część wspólna to HEADER. 
+        2) HEADER jest wyjątkowym SECTION: indywidualny padding, => modyfikujemy cechy SECTION: padding, background-color, border-bottom> section--
+
+    
+    
+    -->
+    
+    <header class="page-header">
+        <div class=" container l-grid l-grid__page-header">
+                
+            <div class="logo page-header__logo">
+                <a class="logo__logotype link" href="./index.html" >
+                    <span class="logo__logotype logo__logotype--brand-color">Web</span> 
+                    <span class="logo__logotype logo__logotype--dark-theme">Studio</span>
+                </a>
+            </div>
+    
+            <!-- ----- ------------------------------------------------>
+            <!-- 2nd menu item - navigation -->
+            <nav class="page-header__nav nav__text">
+                <ul class="nav list-style">
+                    <li class="nav__item">
+                        <a class="link nav__link link--active transition " href="./index.html">Agencja</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="link nav__link" href="./portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="link nav__link" href="#/">Kontakt</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- ----- ------------------------------------------------>
+            <!-- 3rd page-header item - contact links -->
+            <div class="contact contact__text">
+                    <ul class="contact__display list-style">
+                        <li>
+                            <a class="contact__item link" href="mailto:info@devstudio.com">
+                                <svg class="contact__icon-mail" width="16" height="12">
+                                    <use href="./images/icons.svg#icon-envelope">
+                                    </use>
+                                </svg>
+                                info@devstudio.com
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="contact__item link" href="tel:+48111111111">
+                                <svg class="contact__icon-tel " width="10" height="16">
+                                    <use href="./images/icons.svg#icon-smartphone">
+                                    </use>
+                                </svg>
+                                +48 111 111 111
+                            </a>
+
+                        </li>
+
+                    </ul>
+                
+            </div> 
+        </div>             
+    </header>
+    
+    
+    <main>
+    <!-- -------------------------------------------------------- -->
+    <!-- -------------------------------------------------------- -->
+    <!-- Section - ORDER - -->
+    <!-- -------------------------------------------------------- -->
+    <!--dodać/ zmienić block zamów (order): okno modalen z butonami, formularz zamówienia -->
+    <!-- -------------------------------------------------------- -->
+
+        <header class="section__bg-img">
+            <div class="container">
+                <div class="l-grid l-grid--direction-column">
+                    <h1 class="section__header-big">EFEKTYWNE ROZWIĄZANIA <br> DLA WASZEGO BIZNESU </h1>
+                
+                <!-- modal (js)  -->
+
+                    <button data-modal-open class="btn btn__txt btn__box modal__btn" type="button">Zamów usługę
+                    </button>
+
+                    <div class="backdrop is-hidden transition" data-modal>
+                        <div class="modal">
+
+                        <!-- ----- FORM - order form -->    
+                            
+                            <form class="form" role="group" aria-labelledby="order-form">
+                                <h2 class="form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
+                                </h2>                          
+
+                                <label class="form__label" for="name">
+                                    Imię<br>
+                                </label>
+                                <div class="form__item">
+                                    <div class="form__icon">
+                                        <svg class="form__icon-person" width="12" height="12">
+                                            <use href="./images/icons.svg#icon-person">
+                                            </use>
+                                        </svg>
+                                    </div>
+                                    <input class="form__input" 
+                                    type="text" 
+                                    id="name"
+                                    name="user-name" 
+                                    placeholder=" " 
+                                    maxlength="60"
+                                    />
+                                </div>    
+                                
+                                <label class="form__label" for="phone">
+                                    Telefon<br>
+                                </label>
+                                <div class="form__item">
+                                    <div class="form__icon">
+                                        <svg class="form__icon-phone" width="15" height="15">
+                                            <use href="./images/icons.svg#icon-phone_handset">
+                                            </use>
+                                        </svg>
+                                    </div>
+                                    <input 
+                                    class="form__input" 
+                                    type="phone" 
+                                    id="phone"
+                                    name="user-phone" 
+                                    placeholder=" " 
+                                    maxlength="20"
+                                    />
+                                </div>
+                                
+
+                                <label class="form__label" for="email">
+                                    Email<br>
+                                </label>
+                                <div class="form__item">
+                                    <div class="form__icon">
+                                        <svg class="form__icon-filled_envelope" width="15" height="13">
+                                            <use href="./images/icons.svg#icon-filled_envelope">
+                                            </use>
+                                        </svg>
+                                    </div>
+                                    <input 
+                                    class="form__input" 
+                                    type="email" 
+                                    id="email"
+                                    name="user-mail" 
+                                    placeholder=" "  
+                                    required maxlength="50"
+                                    />
+                                </div>
+
+                                <label class="form__label" for="comment">
+                                    Komentarz<br>
+                                </label>
+                                    <textarea 
+                                    class="form__textarea"
+                                    id="comment"
+                                    name="user-comment" 
+                                    maxlength="500"
+                                    placeholder="Wprowadź tekst"
+                                    ></textarea>
+                            
+                            <!-- checkbox -->
+                                <label for="checkbox" class="form__checkbox checkbox">
+                                    <input 
+                                    class="checkbox__input" 
+                                    type="checkbox" 
+                                    id="checkbox" 
+                                    name="user-declare"
+                                    value="true" 
+                                    required
+                                    />
+                                    <span class="checkmark"></span>
+                                    <div class="checkbox__label">Oświadczam iż akceptuję
+                                        <a class="link checkbox__link" href="https://www.google.pl/" target="_blank">
+                                        Regulamin    
+                                        </a>
+                                        i
+                                        <a class="link checkbox__link" href="https://www.google.pl/" target="_blank">
+                                        Politykę Prywatności.
+                                        </a>
+                                    </div>
+                                    
+                                </label>
+                                <button class="btn btn__txt form__btn-submit" type="submit">Wyślij</button>
+                            </form>
+                                
+                            <button data-modal-close class="modal__btn-close transition">
+                                <svg class="close" width="11" height="11">
+                                    <use href="./images/icons.svg#icon-cross"></use>
+                                </svg>
+                            </button> 
+                              </div>
+                                                          
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </header>
+        
+        
+              
+    <!-- -------------------------------------------------------- -->
+    <!-- FEATURE ARTICLES  ----- -->
+    <!-- -------------------------------------------------------- -->
+        <section id="fetures" class="section section--bottom-padding-short">
+            <div class="container">
+                <ul class="l-grid list-style">
+                    
+                <!-- ---- 1st article - antenna icon ----- -->
+                    <li>
+                        <div class="article">
+                            <figure class="article__figure">
+                                <svg class="article__icon" 
+                                width="65" 
+                                height="70"
+                                >
+                                    <use href="./images/icons.svg#icon-antenna-1">
+                                    </use>
+                                </svg>
+                            </figure>
+                            <figcaption class="article__body">
+                                <h4 class="article__title">LOREM IPSUM</h4>
+                                <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel arcu sem. Sed non sodales dui. Interdum et malesuada
+                                </p>
+                                </figcaption>
+                        </div>
+                    </li>
+
+                <!-- ---- 2nd article - clock icon ----- -->
+                    <li>
+                        <div class="article">
+                            <figure class="article__figure">
+                                <svg class="article__icon" 
+                                width="65" 
+                                height="70"
+                                >
+                                    <use href="./images/icons.svg#icon-clock-1">
+                                    </use>
+                                </svg>
+                            </figure>
+                            <figcaption class="article__body">
+                                <h4 class="article__title">LOREM IPSUM</h4>
+                                <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel arcu sem. Sed non sodales dui. Interdum et malesuada
+                                </p>
+                            </figcaption>
+                        </div>
+                    </li>
+
+                <!-- ---- 3rd article - diagram icon ----- -->
+                    <li>
+                        <div class="article">
+                            <figure class="article__figure">
+                                <svg class="article__icon" 
+                                width="65" 
+                                height="70"
+                                >
+                                    <use href="./images/icons.svg#icon-diagram-1">
+                                    </use>
+                                </svg>
+                            </figure>
+                            <figcaption class="article__body">
+                                <h4 class="article__title">LOREM IPSUM</h4>
+                                <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel arcu sem. Sed non sodales dui. Interdum et malesuada
+                                </p>
+                            </figcaption>
+                        </div>
+                    </li>
+
+                <!-- ---- 4th article - astronault icon ----- -->
+                    <li>
+                        <div class="article">
+                            <figure class="article__figure">
+                                <svg class="article__icon" 
+                                width="65" 
+                                height="70"
+                                >
+                                    <use href="./images/icons.svg#icon-astronaut-1">
+                                    </use>
+                                </svg>
+                            </figure>
+                            <figcaption class="article__body">
+                                <h4 class="article__title">LOREM IPSUM</h4>
+                                <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel arcu sem. Sed non sodales dui. Interdum et malesuada
+                                </p>
+                            </figcaption>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section> 
+
+        <!-- -------------------------------------------------------- -->
+        <!-- ----- OFFER Section 
+            - short gallery               -->
+        <!-- -------------------------------------------------------- -->
+
+        <section id="offer" class="section">
+            <div class="container">
+                <h2 class="section__header">Czym się zajmujemy</h2>
+                <ul class="l-grid">
+                    <li>
+                        <figure class="card card__offer-card">
+                            <img class="card__img" src="images/mainpage-what-we-do-close-up-image-programer-working-his-desk-office_1098-18707.jpg" alt="programista pracujący w swoim biurze przy biurku."
+                            height="294"                    
+                            width="370"
+                            >
+                            <p class="card__offer-label">
+                                APLIKACJE KOMPUTEROWE
+                            </p>
+                    </li>
+                    <li>
+                        <figure class="card card__offer-card">
+                            <img class="card__img" src="images/mainpage-what-we-do-web-ui-designers-are-developing-application-smartphones-team-creators-is-working-interface-mobile-phones_8119-2713.jpg" alt="Web UI designers przy pracy, tworzy interfejs na urządznia mobilne"
+                            height="294"                    
+                            width="370"
+                            >
+                        <p class="card__offer-label">
+                                APLIKACJE MOBILNE
+                        </p>
+                    </li>
+                    <li>
+                        <figure class="card card__offer-card">
+                            <img class="card__img"src="images/mainpage-what-we-do-creative-artist-web-design-with-working-colour-selection-graphic-tablet_35674-1119.jpg" alt="Projektant strony internetowej przy pracy, użwa tabletu graficznego."
+                            height="294"                    
+                            width="370"
+                            >
+                        <p class="card__offer-label">
+                            ROZWIĄZANIA GRAFICZNE
+                        </p>
+                    </li>
+                </ul>
+            
+            </div>
+        </section>
+
+        <!-- -------------------------------------------------------- -->
+        <!-- -----  section  - our team - background color dark white             ----- -->
+        <!-- -------------------------------------------------------- -->
+
+        <section class="section section--bg-light-theme">
+            <div class="container">
+                <h2 class="section__header">Nasz zespół</h2>
+        
+                <!-- ----- team cards set - collection - ----- -->
+
+                <ul class="l-grid">
+                    
+                    <!-- team card - 1st item -->
+                    <li>
+                        <figure class="card card__team-card">
+                            <img class="card__img" 
+                            src="images/mainpage-team-product-designer.jpg" alt="portret uśmiechniety pan w okularach" 
+                            width="270"
+                            height="260" 
+                            >
+                            <figcaption class="card__body">
+                                <h3 class="card__name">John Doe</h3>
+                                <p class="card__description">Product Designer</p>
+
+                                <!-- social media btn - btn, btn__text, btn--light-theme -->
+                                <ul class="card__round-btn list-style">
+                                    
+                                    <!-- social media btn- 1st icon -insta-->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#product-designer-instagram-link" role="button"> 
+                                            
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                            </svg>
+                                            
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 2nd icon -twitter -->    
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#product-designer-twitter-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    
+                                <!-- social media - 3rd icon - facebook -->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#product-designer-facebook-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 4th icon - linkedIn -->  
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#product-designer-linkedin-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </figcaption>
+                        </figure>
+                    </li>
+
+                    <!-- team card - 2nd item - Frontend Developer -->
+                    <li>
+                        <figure class="card card__team-card">
+                            <img class="card__img"
+                            src="images/mainpage-team-frontend-developer.jpg" alt="portret uśmiechnieta pani w okularach"
+                            width="270" 
+                            height="260"
+                            >
+                            <figcaption class="card__body">
+                                <h3 class="card__name">John Doe</h3>
+                                <p class="card__description">Frontend Developer</p>
+
+                                <!-- social media - round buttons list -->
+                                <ul class="card__round-btn list-style">
+                                    
+                                    <!-- social media - 1st icon -insta-->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition " href="#frontend-developer-instagram-link" > 
+                                            
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                            </svg>
+                                            
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 2nd icon -twitter -->    
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#frontend-developer-twitter-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    
+                                <!-- social media - 3rd icon - facebook -->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#frontend-developer-facebook-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 4th icon - linkedIn -->  
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#frontend-developer-linkedin-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </figcaption>
+                        </figure>
+                    </li>
+
+                    <!-- team card - 3rd item - Marketing - -->
+                    <li>
+                        <figure class="card card__team-card">
+                            <img class="card__img"
+                            src="images/mainpage-team-marketing.jpg" 
+                            alt="portret uśmiechniety pan " 
+                            width="270" 
+                            height="260"
+                            >
+                            <figcaption class="card__body">
+                                <h3 class="card__name">John Doe</h3>
+                                <p class="card__description">Marketing</p>
+
+                                <!-- social media - icons list -->
+                                <ul class="card__round-btn list-style">
+                                    
+                                    <!-- social media - 1st icon -insta-->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#marketing-instagram-link" > 
+                                            
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                            </svg>
+                                            
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 2nd icon -twitter -->    
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#marketing-twitter-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    
+                                <!-- social media - 3rd icon - facebook -->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#marketing-facebook-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 4th icon - linkedIn -->  
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#marketing-linkedin-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </figcaption>
+                        </figure>
+                    </li>
+
+                    <!-- team card - 4th item - UI Designer -->
+                    <li>
+                        <figure class="card card__team-card">
+                            <img class="card__img"
+                            src="images/mainpage-team-ui-designer.jpg" alt="portret uśmiechniety pan w okularach na tle budynków" 
+                            width="270"
+                            height="260"
+                            >
+                            <figcaption class="card__body">
+                                <h3 class="card__name">John Doe</h3>
+                                <p class="card__description">UI Designer</p>
+                                
+                                <!-- social media - icons list -->
+                                <ul class="card__round-btn list-style">
+                                    
+                                    <!-- social media - 1st icon -insta-->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#ui-designer-instagram-link" > 
+                                            
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                            </svg>
+                                            
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 2nd icon -twitter -->    
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#ui-designer-twitter-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    
+                                <!-- social media - 3rd icon - facebook -->
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#ui-designer-facebook-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                <!-- social media - 4th icon - linkedIn -->  
+                                    <li>
+                                        <a class="link round-btn round-btn--light-theme transition" href="#ui-designer-linkedin-link" > 
+                                            <svg class="icon" 
+                                            width="20" height="20">
+                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    <!-- ----- ------------------ ------------------------------ -->    
+    <!-- ----- OUR CLIENTS SECTION ----------------- -->
+    <!-- nested icons, links without description------------------------------ -->
+
+        <section id="our-client" class="section">
+            <div class="container">
+                <h2 class="section__header">Nasi klienci</h2>
+                <ul class="l-grid">
+                    
+                <!-- ----- button 1st client icon ----- -->
+                    <li>
+                        <a class="link extd-btn transition" href="#client.html">
+                            <svg class="icon extd-btn__icon" width="170" height="92">
+                                <use href="./images/icons.svg#icon-client1-yaco-company"></use>
+                            </svg>
+                        </a>
+                    </li>
+
+                <!-- ----- button 2nd client icon----- -->
+                    <li>
+                        <a class="link extd-btn transition" href="#client.html">
+                            <svg class="icon extd-btn__icon" width="170" height="92">
+                                <use href="./images/icons.svg#icon-client2-tagline1-company"></use>
+                            </svg>
+                        </a>
+                    </li>
+
+                <!-- ----- 3rd client icon----- -->
+                    <li>
+                        <a class="link extd-btn transition" href="#client.html">
+                            <svg class="icon extd-btn__icon" width="170" height="92">
+                                <use href="./images/icons.svg#icon-client3-company-company"></use>
+                            </svg>
+                        </a>
+                    </li>
+
+                <!-- ----- 4th client icon----- -->
+                    <li>
+                        <a class="link extd-btn transition" href="#client.html">
+                            <svg class="icon extd-btn__icon" width="170" height="92">
+                                <use href="./images/icons.svg#icon-client4-foster-peters-company"></use>
+                            </svg>
+                        </a>
+                    </li>
+
+                <!-- ----- 5th client icon----- -->
+                    <li>
+                        <a class="link extd-btn transition" href="#client.html">
+                            <svg class="icon extd-btn__icon" width="170" height="92">
+                                <use href="./images/icons.svg#icon-client5-brand-company"></use>
+                            </svg>
+                        </a>
+                    </li>
+
+                <!-- ----- 6th client icon----- -->
+                    <li>
+                        <a class="link extd-btn transition" href="#client.html">
+                            <svg class="icon extd-btn__icon" width="170" height="92">
+                                <use href="./images/icons.svg#icon-client6-tagline-company"></use>
+                            </svg>
+                        </a>   
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------------------- -->
+    <!-- ----- ----- FOOTER SECTION ----- ----- -->
+    <!-- ----- general block-classes: section, container,// specyfic block: footer ----- -->
+    <!--  cont. logo + address box / social media icons ----- -->
+    <!-- ----- ----- --------- ----- ----- -->
+
+    <footer class="footer ">
+        <div class="container l-grid l-grid__footer"> <!-- grid division: 1/2, 1/2, 1 -->
+            
+            <!-- 1st footer item - box cont. logo + address box -->
+            <div class="footer__item">
+                <div class="logo footer__logo">
+                    <a class="link" href="./index.html">
+                        <span class="logo__logotype logo__logotype--brand-color">Web</span>
+                        <span class="logo__logotype logo__logotype--light-theme">Studio</span>
+                    </a>        
+                </div>
+                <address class="address">
+                    <p> m. Warszawa, Aleje Jerozolimskie 21 </p>
+                    <p><a class="link address--cl-grey" href="mailto:info@example.com">info@example.com</a></p>
+                    <p><a class="link address--cl-grey" href="tel:+48111111111">+48 111 111 111</a></p>
+                </address>
+            </div> 
+
+            <!-- 2nd footer item - cont. label + social media icons list  -->
+
+            <div class="footer__item"> 
+
+                <h3 class="footer__label" >DOŁĄCZ DO NAS
+                </h3>
+                <ul class="footer__round-btn">
+                                                    
+                    <!-- social media - 1st icon -insta-->
+                    <li>
+                        <a class="link round-btn round-btn--dark-theme transition" href="#instagram-link" > 
+                            
+                            <svg class="round-btn__icon" 
+                            width="20" height="20">
+                                <use href="./images/icons.svg#icon-instagram"></use>
+                            </svg>
+                            
+                        </a>
+                    </li>   
+
+                    <!-- social media - 2nd icon -twitter -->    
+                        <li>
+                            <a class="link round-btn round-btn--dark-theme transition" href="#twitter-link" > 
+                                <svg class="round-btn__icon" 
+                                width="20" height="20">
+                                    <use href="./images/icons.svg#icon-twitter-1"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        
+                    <!-- social media - 3rd icon - facebook -->
+                        <li>
+                            <a class="link round-btn round-btn--dark-theme transition" href="#facebook-link" > 
+                                <svg class="round-btn__icon" 
+                                width="20" height="20">
+                                    <use href="./images/icons.svg#icon-facebook-1"></use>
+                                </svg>
+                            </a>
+                        </li>
+
+                    <!-- social media - 4th icon - linkedIn -->  
+                        <li>
+                            <a class="link round-btn round-btn--dark-theme transition" href="#footerlinkedin-link" > 
+                                <svg class="round-btn__icon" 
+                                width="20" height="20">
+                                    <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>  
+                </ul>
+            </div>
+
+            <div class="footer__item">
+                <form class="footer__item footer-form" name="newsletter_email" action="/singnup" method="post" autocomplete="off" target="_self" validate>
+                    <label class="footer__label" for="email" >ZAPISZ SIĘ DO NEWSLETTERA
+                    </label>
+                    <div class="footer-form__grid">
+                        <input  
+                        class="footer-form__input transition" 
+                        type="email"
+                        id="email" 
+                        name="newsletter-user-email" 
+                        placeholder="E-mail, example@mail.com" 
+                        />
+                        <button class="btn btn__txt" type="submit">
+                            <div class="btn__grid">
+                                <span class="btn__text">
+                                Zapisz się
+                                </span>
+                                <svg class="btn__icon" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-icon-send"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </label>
+                            </div>                             
+                            
+                        </p>
+
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="./js/modal.js">
+
+    </script>
+    </body>

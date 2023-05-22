@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" >
@@ -23,44 +23,35 @@
   <body>
     <!-- ----- ------------------------------------------------>
     <!-- ----- Section - PAGE HEADER ----            --> 
-    <!-- ----- (BEM) default blocks: section, container, logo 
-        ustawienie defaultowe:
-        1) HEADER jest jeden wspólny dla każdej podstrony -> część wspólna to HEADER. 
-        2) HEADER jest wyjątkowym SECTION: indywidualny padding, => modyfikujemy cechy SECTION: padding, background-color, border-bottom> section--
-
-    
-    
-    -->
     
     <header class="page-header">
         <div class=" container l-grid l-grid__page-header">
         
-        <!-- page-header item - LOGO -->
+        <!-- page-header item - LOGO (mobile, tablet & desktop)-->
             <div class="logo page-header__logo">
                 <a class="logo__logotype link" href="./index.html" >
                     <span class="logo__logotype logo__logotype--brand-color">Web</span> 
                     <span class="logo__logotype logo__logotype--dark-theme">Studio</span>
                 </a>
             </div>
-        <!-- page-header item - mobile navigation -->
+        <!-- page-header item - navigation (mobile)-->
             <div class="nav-mobile">
                 <button 
                 data-modal-open
-                class="js-open-nav-mobile"
-
-                
-                ">
-                <button data-modal-open class="btn btn__txt btn__box modal__btn" type="button">Zamów usługę
-                </button> 
-                </button>
-                <a class="kebabCase" href="mailto:info@devstudio.com">
-                    <svg class="contact__icon-mail" width="16" height="12">
-                        <use href="./images/icons.svg#icon-envelope">
+                class="js-open-nav-mobile btn nav-mobile__btn transition"
+                type="button"
+                style="border: none"
+                aria-expanded="false"
+                aria-controls="nav-mobile"
+                >
+                    <svg 
+                        class="nav-mobile__btn--icon" 
+                        width="24" height="24"
+                    >
+                        <use href="./images/svg/icons.svg#icon-burger">
                         </use>
                     </svg>
-                    info@devstudio.com
-                </a>
-
+                </button>
             </div>
         <!-- page-header item - navigation (tablet & desktop)-->
             <nav class="page-header__nav nav__text">
@@ -76,7 +67,7 @@
                     </li>
                 </ul>
             </nav>
-        <!-- page-header item - contact links -->
+        <!-- page-header item - contact links (tablet & desktop)-->
             <div class="contact contact__text">
                     <ul class="contact__display list-style">
                         <li>
@@ -103,8 +94,76 @@
                     </ul>
                 
             </div> 
-        </div>             
+        </div>
+        
+        <!--  okno modalne menu nav dla mobile !!! przenieść pod footer do pozostałych modali i js-->
+        <section class="nav-mobile js-menu-container" id="nav-mobile">
+            <div class="container">
+              <button type="button" class="mobile-menu__toggle-button js-close-menu">
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+      
+              <div class="mobile-menu__list-of-pages">
+                <nav class="list-of-pages__links">
+                  <a href="./index.html" class="list-of-pages__links--sides active"
+                    >Agencja</a
+                  >
+                  <a href="./portfolio.html" class="list-of-pages__links--sides"
+                    >Portfolio</a
+                  >
+                  <a href="./kontakt" class="list-of-pages__links--sides">Kontakt</a>
+                </nav>
+                <address class="list-of-pages__links">
+                  <div>
+                    <a
+                      class="list-of-pages__links--contacts telephone"
+                      href="tel:0048111111111"
+                      >+48 111 111 111</a
+                    >
+                  </div>
+                  <div>
+                    <a
+                      class="list-of-pages__links--contacts email"
+                      href="mailto:info@devstudio.com"
+                      >info@devstudio.com</a
+                    >
+                  </div>
+      
+                  <div class="list-of-pages__links--social-media">
+                    <a
+                      href="https://www.instagram.com/"
+                      class="list-of-pages__links--type"
+                      >Instagram</a
+                    >
+                    <a href="https://twitter.com/" class="list-of-pages__links--type"
+                      >Twitter</a
+                    >
+                    <a href="https://facebook.com/" class="list-of-pages__links--type"
+                      >Facebook</a
+                    >
+                    <a href="https://linkedin.com/" class="list-of-pages__links--type"
+                      >LinkedIn</a
+                    >
+                  </div>
+                </address>
+              </div>
+            </div>
+          </section>
+    
     </header>
+    
     
     
     <main>
@@ -119,134 +178,14 @@
             <div class="container">
                 <div class="l-grid l-grid--direction-column">
                     <h1 class="section__header-big">EFEKTYWNE ROZWIĄZANIA <br> DLA WASZEGO BIZNESU </h1>
-                
-                <!-- modal (js)  -->
-
                     <button data-modal-open class="btn btn__txt btn__box modal__btn" type="button">Zamów usługę
                     </button>
-
-                    <div class="backdrop is-hidden transition" data-modal>
-                        <div class="modal">
-
-                        <!-- ----- FORM - order form -->    
-                            
-                            <form class="form" role="group" aria-labelledby="order-form">
-                                <h2 class="form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
-                                </h2>                          
-
-                                <label class="form__label" for="name">
-                                    Imię<br>
-                                </label>
-                                <div class="form__item">
-                                    <div class="form__icon">
-                                        <svg class="form__icon-person" width="12" height="12">
-                                            <use href="./images/icons.svg#icon-person">
-                                            </use>
-                                        </svg>
-                                    </div>
-                                    <input class="form__input" 
-                                    type="text" 
-                                    id="name"
-                                    name="user-name" 
-                                    placeholder=" " 
-                                    maxlength="60"
-                                    />
-                                </div>    
-                                
-                                <label class="form__label" for="phone">
-                                    Telefon<br>
-                                </label>
-                                <div class="form__item">
-                                    <div class="form__icon">
-                                        <svg class="form__icon-phone" width="15" height="15">
-                                            <use href="./images/icons.svg#icon-phone_handset">
-                                            </use>
-                                        </svg>
-                                    </div>
-                                    <input 
-                                    class="form__input" 
-                                    type="phone" 
-                                    id="phone"
-                                    name="user-phone" 
-                                    placeholder=" " 
-                                    maxlength="20"
-                                    />
-                                </div>
-                                
-
-                                <label class="form__label" for="email">
-                                    Email<br>
-                                </label>
-                                <div class="form__item">
-                                    <div class="form__icon">
-                                        <svg class="form__icon-filled_envelope" width="15" height="13">
-                                            <use href="./images/icons.svg#icon-filled_envelope">
-                                            </use>
-                                        </svg>
-                                    </div>
-                                    <input 
-                                    class="form__input" 
-                                    type="email" 
-                                    id="email"
-                                    name="user-mail" 
-                                    placeholder=" "  
-                                    required maxlength="50"
-                                    />
-                                </div>
-
-                                <label class="form__label" for="comment">
-                                    Komentarz<br>
-                                </label>
-                                    <textarea 
-                                    class="form__textarea"
-                                    id="comment"
-                                    name="user-comment" 
-                                    maxlength="500"
-                                    placeholder="Wprowadź tekst"
-                                    ></textarea>
-                            
-                            <!-- checkbox -->
-                                <label for="checkbox" class="form__checkbox checkbox">
-                                    <input 
-                                    class="checkbox__input" 
-                                    type="checkbox" 
-                                    id="checkbox" 
-                                    name="user-declare"
-                                    value="true" 
-                                    required
-                                    />
-                                    <span class="checkmark"></span>
-                                    <div class="checkbox__label">Oświadczam iż akceptuję
-                                        <a class="link checkbox__link" href="https://www.google.pl/" target="_blank">
-                                        Regulamin    
-                                        </a>
-                                        i
-                                        <a class="link checkbox__link" href="https://www.google.pl/" target="_blank">
-                                        Politykę Prywatności.
-                                        </a>
-                                    </div>
-                                    
-                                </label>
-                                <button class="btn btn__txt form__btn-submit" type="submit">Wyślij</button>
-                            </form>
-                                
-                            <button data-modal-close class="modal__btn-close transition">
-                                <svg class="close" width="11" height="11">
-                                    <use href="./images/icons.svg#icon-cross"></use>
-                                </svg>
-                            </button> 
-                              </div>
-                                                          
-                        </div>
-                    </div>
                 </div>
             </div>               
-        </header>
-        
-        
+        </header>        
               
     <!-- -------------------------------------------------------- -->
-    <!-- FEATURE ARTICLES  ----- -->
+    <!-- Section - FEATURE ARTICLES  ----- -->
     <!-- -------------------------------------------------------- -->
         <section id="fetures" class="section section--bottom-padding-short">
             <div class="container">
@@ -260,7 +199,7 @@
                                 width="65" 
                                 height="70"
                                 >
-                                    <use href="./images/icons.svg#icon-antenna-1">
+                                    <use href="./images/svg/icons.svg#icon-antenna-1">
                                     </use>
                                 </svg>
                             </figure>
@@ -280,7 +219,7 @@
                                 width="65" 
                                 height="70"
                                 >
-                                    <use href="./images/icons.svg#icon-clock-1">
+                                    <use href="./images/svg/icons.svg#icon-clock-1">
                                     </use>
                                 </svg>
                             </figure>
@@ -300,7 +239,7 @@
                                 width="65" 
                                 height="70"
                                 >
-                                    <use href="./images/icons.svg#icon-diagram-1">
+                                    <use href="./images/svg/icons.svg#icon-diagram-1">
                                     </use>
                                 </svg>
                             </figure>
@@ -320,7 +259,7 @@
                                 width="65" 
                                 height="70"
                                 >
-                                    <use href="./images/icons.svg#icon-astronaut-1">
+                                    <use href="./images/svg/icons.svg#icon-astronaut-1">
                                     </use>
                                 </svg>
                             </figure>
@@ -336,9 +275,8 @@
         </section> 
 
         <!-- -------------------------------------------------------- -->
-        <!-- ----- OFFER Section 
-            - short gallery               -->
-        <!-- -------------------------------------------------------- -->
+        <!-- ----- OFFER Section                                        -->
+        <!-- -- -------------------------------------------------------- -->
 
         <section id="offer" class="section">
             <div class="container">
@@ -346,7 +284,7 @@
                 <ul class="l-grid">
                     <li>
                         <figure class="card card__offer-card">
-                            <img class="card__img" src="images/mainpage-what-we-do-close-up-image-programer-working-his-desk-office_1098-18707.jpg" alt="programista pracujący w swoim biurze przy biurku."
+                            <img class="card__img" src="images/main-page-images/mainpage-what-we-do-close-up-image-programer-working-his-desk-office_1098-18707.jpg" alt="programista pracujący w swoim biurze przy biurku."
                             height="294"                    
                             width="370"
                             >
@@ -356,7 +294,7 @@
                     </li>
                     <li>
                         <figure class="card card__offer-card">
-                            <img class="card__img" src="images/mainpage-what-we-do-web-ui-designers-are-developing-application-smartphones-team-creators-is-working-interface-mobile-phones_8119-2713.jpg" alt="Web UI designers przy pracy, tworzy interfejs na urządznia mobilne"
+                            <img class="card__img" src="images/main-page-images/mainpage-what-we-do-web-ui-designers-are-developing-application-smartphones-team-creators-is-working-interface-mobile-phones_8119-2713.jpg" alt="Web UI designers przy pracy, tworzy interfejs na urządznia mobilne"
                             height="294"                    
                             width="370"
                             >
@@ -366,7 +304,7 @@
                     </li>
                     <li>
                         <figure class="card card__offer-card">
-                            <img class="card__img"src="images/mainpage-what-we-do-creative-artist-web-design-with-working-colour-selection-graphic-tablet_35674-1119.jpg" alt="Projektant strony internetowej przy pracy, użwa tabletu graficznego."
+                            <img class="card__img"src="images/main-page-images/mainpage-what-we-do-creative-artist-web-design-with-working-colour-selection-graphic-tablet_35674-1119.jpg" alt="Projektant strony internetowej przy pracy, użwa tabletu graficznego."
                             height="294"                    
                             width="370"
                             >
@@ -395,7 +333,7 @@
                     <li>
                         <figure class="card card__team-card">
                             <img class="card__img" 
-                            src="images/mainpage-team-product-designer.jpg" alt="portret uśmiechniety pan w okularach" 
+                            src="images/main-page-images/mainpage-team-product-designer.jpg" alt="portret uśmiechniety pan w okularach" 
                             width="270"
                             height="260" 
                             >
@@ -412,7 +350,7 @@
                                             
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                                <use href="./images/svg/icons.svg#icon-instagram"></use>
                                             </svg>
                                             
                                         </a>
@@ -423,7 +361,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#product-designer-twitter-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-twitter-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -433,7 +371,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#product-designer-facebook-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-facebook-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -443,7 +381,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#product-designer-linkedin-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-linkedin-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -456,7 +394,7 @@
                     <li>
                         <figure class="card card__team-card">
                             <img class="card__img"
-                            src="images/mainpage-team-frontend-developer.jpg" alt="portret uśmiechnieta pani w okularach"
+                            src="images/main-page-images/mainpage-team-frontend-developer.jpg" alt="portret uśmiechnieta pani w okularach"
                             width="270" 
                             height="260"
                             >
@@ -473,7 +411,7 @@
                                             
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                                <use href="./images/svg/icons.svg#icon-instagram"></use>
                                             </svg>
                                             
                                         </a>
@@ -484,7 +422,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#frontend-developer-twitter-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-twitter-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -494,7 +432,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#frontend-developer-facebook-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-facebook-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -504,7 +442,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#frontend-developer-linkedin-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-linkedin-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -517,7 +455,7 @@
                     <li>
                         <figure class="card card__team-card">
                             <img class="card__img"
-                            src="images/mainpage-team-marketing.jpg" 
+                            src="images/main-page-images/mainpage-team-marketing.jpg" 
                             alt="portret uśmiechniety pan " 
                             width="270" 
                             height="260"
@@ -535,7 +473,7 @@
                                             
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                                <use href="./images/svg/icons.svg#icon-instagram"></use>
                                             </svg>
                                             
                                         </a>
@@ -546,7 +484,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#marketing-twitter-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-twitter-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -556,7 +494,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#marketing-facebook-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-facebook-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -566,7 +504,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#marketing-linkedin-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-linkedin-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -579,7 +517,7 @@
                     <li>
                         <figure class="card card__team-card">
                             <img class="card__img"
-                            src="images/mainpage-team-ui-designer.jpg" alt="portret uśmiechniety pan w okularach na tle budynków" 
+                            src="images/main-page-images/mainpage-team-ui-designer.jpg" alt="portret uśmiechniety pan w okularach na tle budynków" 
                             width="270"
                             height="260"
                             >
@@ -596,7 +534,7 @@
                                             
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-instagram"></use>
+                                                <use href="./images/svg/icons.svg#icon-instagram"></use>
                                             </svg>
                                             
                                         </a>
@@ -606,8 +544,9 @@
                                     <li>
                                         <a class="link round-btn round-btn--light-theme transition" href="#ui-designer-twitter-link" > 
                                             <svg class="icon" 
-                                            width="20" height="20">
-                                                <use href="./images/icons.svg#icon-twitter-1"></use>
+                                            width="20" height="20"
+                                            >
+                                                <use href="./images/svg/icons.svg#icon-twitter-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -617,7 +556,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#ui-designer-facebook-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-facebook-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-facebook-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -627,7 +566,7 @@
                                         <a class="link round-btn round-btn--light-theme transition" href="#ui-designer-linkedin-link" > 
                                             <svg class="icon" 
                                             width="20" height="20">
-                                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                                <use href="./images/svg/icons.svg#icon-linkedin-1"></use>
                                             </svg>
                                         </a>
                                     </li>
@@ -652,7 +591,7 @@
                     <li>
                         <a class="link extd-btn transition" href="#client.html">
                             <svg class="icon extd-btn__icon" width="170" height="92">
-                                <use href="./images/icons.svg#icon-client1-yaco-company"></use>
+                                <use href="./images/svg/icons.svg#icon-client1-yaco-company"></use>
                             </svg>
                         </a>
                     </li>
@@ -661,7 +600,7 @@
                     <li>
                         <a class="link extd-btn transition" href="#client.html">
                             <svg class="icon extd-btn__icon" width="170" height="92">
-                                <use href="./images/icons.svg#icon-client2-tagline1-company"></use>
+                                <use href="./images/svg/icons.svg#icon-client2-tagline1-company"></use>
                             </svg>
                         </a>
                     </li>
@@ -670,7 +609,7 @@
                     <li>
                         <a class="link extd-btn transition" href="#client.html">
                             <svg class="icon extd-btn__icon" width="170" height="92">
-                                <use href="./images/icons.svg#icon-client3-company-company"></use>
+                                <use href="./images/svg/icons.svg#icon-client3-company-company"></use>
                             </svg>
                         </a>
                     </li>
@@ -679,7 +618,7 @@
                     <li>
                         <a class="link extd-btn transition" href="#client.html">
                             <svg class="icon extd-btn__icon" width="170" height="92">
-                                <use href="./images/icons.svg#icon-client4-foster-peters-company"></use>
+                                <use href="./images/svg/icons.svg#icon-client4-foster-peters-company"></use>
                             </svg>
                         </a>
                     </li>
@@ -688,7 +627,7 @@
                     <li>
                         <a class="link extd-btn transition" href="#client.html">
                             <svg class="icon extd-btn__icon" width="170" height="92">
-                                <use href="./images/icons.svg#icon-client5-brand-company"></use>
+                                <use href="./images/svg/icons.svg#icon-client5-brand-company"></use>
                             </svg>
                         </a>
                     </li>
@@ -697,7 +636,7 @@
                     <li>
                         <a class="link extd-btn transition" href="#client.html">
                             <svg class="icon extd-btn__icon" width="170" height="92">
-                                <use href="./images/icons.svg#icon-client6-tagline-company"></use>
+                                <use href="./images/svg/icons.svg#icon-client6-tagline-company"></use>
                             </svg>
                         </a>   
                     </li>
@@ -746,7 +685,7 @@
                             
                             <svg class="round-btn__icon" 
                             width="20" height="20">
-                                <use href="./images/icons.svg#icon-instagram"></use>
+                                <use href="./images/svg/icons.svg#icon-instagram"></use>
                             </svg>
                             
                         </a>
@@ -757,7 +696,7 @@
                             <a class="link round-btn round-btn--dark-theme transition" href="#twitter-link" > 
                                 <svg class="round-btn__icon" 
                                 width="20" height="20">
-                                    <use href="./images/icons.svg#icon-twitter-1"></use>
+                                    <use href="./images/svg/icons.svg#icon-twitter-1"></use>
                                 </svg>
                             </a>
                         </li>
@@ -767,7 +706,7 @@
                             <a class="link round-btn round-btn--dark-theme transition" href="#facebook-link" > 
                                 <svg class="round-btn__icon" 
                                 width="20" height="20">
-                                    <use href="./images/icons.svg#icon-facebook-1"></use>
+                                    <use href="./images/svg/icons.svg#icon-facebook-1"></use>
                                 </svg>
                             </a>
                         </li>
@@ -777,7 +716,7 @@
                             <a class="link round-btn round-btn--dark-theme transition" href="#footerlinkedin-link" > 
                                 <svg class="round-btn__icon" 
                                 width="20" height="20">
-                                    <use href="./images/icons.svg#icon-linkedin-1"></use>
+                                    <use href="./images/svg/icons.svg#icon-linkedin-1"></use>
                                 </svg>
                             </a>
                         </li>
@@ -803,7 +742,7 @@
                                 Zapisz się
                                 </span>
                                 <svg class="btn__icon" width="24" height="24">
-                                    <use href="./images/icons.svg#icon-icon-send"/>
+                                    <use href="./images/svg/icons.svg#icon-icon-send"/>
                                 </svg>
                             </div>
                         </button>
@@ -816,6 +755,125 @@
             </div>
         </div>
     </footer>
+
+    <!-- modal (js)  -->
+    <div class="backdrop is-hidden transition" data-modal>
+        <div class="modal">
+
+    
+
+        <!-- ----- FORM - order form -->    
+            
+            <form class="form" role="group" aria-labelledby="order-form">
+                <h2 class="form__header" id="order-form__header">Zostaw swoje dane w formularzu poniżej
+                </h2>                          
+
+                <label class="form__label" for="name">
+                    Imię<br>
+                </label>
+                <div class="form__item">
+                    <div class="form__icon">
+                        <svg class="form__icon-person" width="12" height="12">
+                            <use href="./images/svg/icons.svg#icon-person">
+                            </use>
+                        </svg>
+                    </div>
+                    <input class="form__input" 
+                    type="text" 
+                    id="name"
+                    name="user-name" 
+                    placeholder=" " 
+                    maxlength="60"
+                    />
+                </div>    
+                
+                <label class="form__label" for="phone">
+                    Telefon<br>
+                </label>
+                <div class="form__item">
+                    <div class="form__icon">
+                        <svg class="form__icon-phone" width="15" height="15">
+                            <use href="./images/svg/icons.svg#icon-phone_handset">
+                            </use>
+                        </svg>
+                    </div>
+                    <input 
+                    class="form__input" 
+                    type="phone" 
+                    id="phone"
+                    name="user-phone" 
+                    placeholder=" " 
+                    maxlength="20"
+                    />
+                </div>
+                
+
+                <label class="form__label" for="email">
+                    Email<br>
+                </label>
+                <div class="form__item">
+                    <div class="form__icon">
+                        <svg class="form__icon-filled_envelope" width="15" height="13">
+                            <use href="./images/svg/icons.svg#icon-filled_envelope">
+                            </use>
+                        </svg>
+                    </div>
+                    <input 
+                    class="form__input" 
+                    type="email" 
+                    id="email"
+                    name="user-mail" 
+                    placeholder=" "  
+                    required maxlength="50"
+                    />
+                </div>
+
+                <label class="form__label" for="comment">
+                    Komentarz<br>
+                </label>
+                    <textarea 
+                    class="form__textarea"
+                    id="comment"
+                    name="user-comment" 
+                    maxlength="500"
+                    placeholder="Wprowadź tekst"
+                    ></textarea>
+            
+            <!-- checkbox -->
+                <label for="checkbox" class="form__checkbox checkbox">
+                    <input 
+                    class="checkbox__input" 
+                    type="checkbox" 
+                    id="checkbox" 
+                    name="user-declare"
+                    value="true" 
+                    required
+                    />
+                    <span class="checkmark"></span>
+                    <div class="checkbox__label">Oświadczam iż akceptuję
+                        <a class="link checkbox__link" href="https://www.google.pl/" target="_blank">
+                        Regulamin    
+                        </a>
+                        i
+                        <a class="link checkbox__link" href="https://www.google.pl/" target="_blank">
+                        Politykę Prywatności.
+                        </a>
+                    </div>
+                    
+                </label>
+                <button class="btn btn__txt form__btn-submit" type="submit">Wyślij</button>
+            </form>
+                
+            <button data-modal-close class="modal__btn-close transition">
+                <svg class="close" width="11" height="11">
+                    <use href="./images/svg/icons.svg#icon-cross"></use>
+                </svg>
+            </button> 
+              </div>
+                                          
+        </div>
+    </div>
+</div>
 
     
 

@@ -25,7 +25,7 @@
     <!-- ----- Section - PAGE HEADER ----            --> 
     
     <header class="page-header">
-        <div class=" container l-grid l-grid__page-header">
+        <div class="container l-grid l-grid__page-header">
         
         <!-- page-header item - LOGO (mobile, tablet & desktop)-->
             <div class="logo page-header__logo">
@@ -35,24 +35,22 @@
                 </a>
             </div>
         <!-- page-header item - navigation (mobile)-->
-            <div class="nav-mobile">
-                <button 
-                data-modal-open
-                class="js-open-nav-mobile btn nav-mobile__btn transition"
-                type="button"
-                style="border: none"
-                aria-expanded="false"
-                aria-controls="nav-mobile"
+            <button data-modal-open class="nav-mobile__toggle page-header__nav-mobile js-open-nav-mobile"
+            
+            type="button"
+            style="border: none"
+            aria-expanded="false"
+            aria-controls="nav-mobile"
+            >
+                <svg 
+                    class="nav-mobile__toggle--icon" 
+                    width="24" height="24"
                 >
-                    <svg 
-                        class="nav-mobile__btn--icon" 
-                        width="24" height="24"
-                    >
-                        <use href="./images/svg/icons.svg#icon-burger">
-                        </use>
-                    </svg>
-                </button>
-            </div>
+                    <use href="./images/svg/icons.svg#icon-burger">
+                    </use>
+                </svg>
+            </button>
+            
         <!-- page-header item - navigation (tablet & desktop)-->
             <nav class="page-header__nav nav__text">
                 <ul class="nav list-style">
@@ -755,6 +753,7 @@
             </div>
         </div>
     </footer>
+    <!-- FOOTER END -->
 
     <!-- modal (js)  -->
     <div class="backdrop is-hidden transition" data-modal>

@@ -34,26 +34,9 @@
                     <span class="logo__logotype logo__logotype--dark-theme">Studio</span>
                 </a>
             </div>
-        <!-- page-header item - navigation (mobile)-->
-            <button data-modal-open class="nav-mobile__toggle page-header__nav-mobile js-open-nav-mobile"
-            
-            type="button"
-            style="border: none"
-            aria-expanded="false"
-            aria-controls="nav-mobile"
-            >
-                <svg 
-                    class="nav-mobile__toggle--icon" 
-                    width="24" height="24"
-                >
-                    <use href="./images/svg/icons.svg#icon-burger">
-                    </use>
-                </svg>
-            </button>
-            
         <!-- page-header item - navigation (tablet & desktop)-->
-            <nav class="page-header__nav nav__text">
-                <ul class="nav list-style">
+            <nav class="nav page-header__nav">
+                <ul class="nav__list list-style">
                     <li class="nav__item">
                         <a class="link nav__link link--active transition " href="./index.html">Agencja</a>
                     </li>
@@ -92,37 +75,56 @@
                     </ul>
                 
             </div> 
+        <!-- page-header item - navigation (mobile)-->
+            <div class="nav-mobile__toggle-btn page-header__nav-mobile">
+                <button data-modal-open class="js-open-nav-mobile"
+                type="button"
+                style="border: none"
+                aria-expanded="false"
+                aria-controls="nav-mobile"
+                >
+                    <svg class="nav-mobile__toggle--icon" 
+                        width="24" height="24"
+                    >
+                        <use href="./images/svg/icons.svg#icon-mobile-menu-button">
+                        </use>
+                    </svg>
+                </button>
+                
+            </div>
         </div>
         
-        <!--  okno modalne menu nav dla mobile !!! przenieść pod footer do pozostałych modali i js-->
+    <!--  okno modalne navigacja dla mobile nav-mobile !!! przenieść pod footer do pozostałych modali i js-->
         <section class="nav-mobile js-menu-container" id="nav-mobile">
             <div class="container">
-              <button type="button" class="mobile-menu__toggle-button js-close-menu">
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-      
-              <div class="mobile-menu__list-of-pages">
-                <nav class="list-of-pages__links">
-                  <a href="./index.html" class="list-of-pages__links--sides active"
-                    >Agencja</a
-                  >
-                  <a href="./portfolio.html" class="list-of-pages__links--sides"
-                    >Portfolio</a
-                  >
-                  <a href="./kontakt" class="list-of-pages__links--sides">Kontakt</a>
-                </nav>
+                <!-- 1 item - btn X-->
+                <button type="button" class="mobile-menu__toggle-button js-close-menu">
+                    <svg
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    >
+                        <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                        ></path>
+                    </svg>
+                </button>
+                <!-- 2 item - nav links-->
+                <div class="nav-mobile__list-of-pages">
+                    <nav class="list-of-pages__links">
+                    <a href="./index.html" class="list-of-pages__links--sides active"
+                        >Agencja</a
+                    >
+                    <a href="./portfolio.html" class="list-of-pages__links--sides"
+                        >Portfolio</a
+                    >
+                    <a href="./kontakt" class="list-of-pages__links--sides">Kontakt</a>
+                    </nav>
+                <!-- 3 items block - contact adress-->
                 <address class="list-of-pages__links">
                   <div>
                     <a
@@ -138,7 +140,7 @@
                       >info@devstudio.com</a
                     >
                   </div>
-      
+                <!-- 4 items block - social media links-->
                   <div class="list-of-pages__links--social-media">
                     <a
                       href="https://www.instagram.com/"
@@ -169,7 +171,7 @@
     <!-- -------------------------------------------------------- -->
     <!-- Section - ORDER - -->
     <!-- -------------------------------------------------------- -->
-    <!--dodać/ zmienić block zamów (order): okno modalen z butonami, formularz zamówienia -->
+    <!--dodać/ zmienić block zamów (order): okno modalne z butonami, formularz zamówienia -->
     <!-- -------------------------------------------------------- -->
 
         <header class="section__bg-img">
@@ -755,11 +757,16 @@
     </footer>
     <!-- FOOTER END -->
 
-    <!-- modal (js)  -->
+<!-- ---------- ---------- -->    
+    <!-- MODALS (js)  -->
+    <!-- ---------- ---------- -->
+
+    <!-- ---------- ---------- -->
+    <!-- modal - nav-mobile - menu for mobile size screen ---------- ---------- -->
+
+    <!-- modal - order form -->
     <div class="backdrop is-hidden transition" data-modal>
         <div class="modal">
-
-    
 
         <!-- ----- FORM - order form -->    
             
@@ -872,6 +879,7 @@
                                           
         </div>
     </div>
+    <!-- END modal - order form -->
 </div>
 
     

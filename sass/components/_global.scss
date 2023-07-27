@@ -1,8 +1,15 @@
-/* ----- page layout ----- */
-/* ----- - division by sections, display container and grid ----- */
+/* ----- page layout ----- division by sections, display container and flex warp grid -----
+component structure:
+Blocks: .section, .container 
+media setting for mobile (480px);, tablet (768px) & desktop (1200px)
+*/
+
+/* BLOCKS */
+
 .section{
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: aqua;
 
     &__bg-img {
         width:auto;
@@ -53,14 +60,48 @@
         color: getColor('font-light-main'); 
     }   
 }
-.container {
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 1200px;
+
+/* media $breakpointTablet: 
+- 
+*/
+@media (min-width: $breakpointTablet) {
+    .section {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+    
+    
 }
 
-.l-grid{
+/* media $breakpointdesktop: 
+- padding top & bottom: +34px;
+*/
+
+.container {
+    margin: 0 auto;
+    /*padding-left: $paddingLR;
+    padding-right: $paddingLR;*/
+    min-width: 320px;
+    max-width: 1200px;
+    background-color: blue;
+}
+
+@media (min-width: $breakpointTablet) {
+    .container {
+      width: $breakpointTablet;
+    }
+    
+}
+
+
+@media (min-width: $breakpointDesktop) {
+    .container {
+      width: $breakpointDesktop;
+    }
+}
+
+
+/*.l-grid{
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -92,4 +133,4 @@
         align-content: flex-start;
         align-items: baseline;
     }
-}
+}*/

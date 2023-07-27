@@ -1,4 +1,11 @@
+/* component structure:
+Blocks: .page-header & items: .logo, .nav, .contact, (.nav-mobile)
+media setting for tablet & desctop , func: @media (max-width: $breakpointTablet)
+*/
+
+/* BLOCKS */
 .page-header{
+    max-height: 80px;
     background-color: getColor('bg-light-main');
     border-bottom: 1px solid getColor('border-light2');
 
@@ -8,15 +15,17 @@
 }
 
 .nav{
-    display: flex;   
-    gap: 40px;
-
-    &__text{
-        font-size: 14px;
-        font-weight: 500;
-        line-height: calc(16 / 14);
-        letter-spacing: 0.02em;
-        color: getColor('font-dark');
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.02em;
+    color: getColor('font-dark');
+    
+    
+    &__list{
+        display: flex;
+        gap: 40px;
     }
 
     &__link {
@@ -25,7 +34,7 @@
 }
 
 .contact {
-    /*display: flex;*/
+    display: none;
     padding: 0px 10px;  
 
     &__display {
@@ -92,4 +101,20 @@
             fill: getColor('accent');
         }
     }
+}
+
+/* MEDIA SETTING*/
+@media (max-width: $breakpointTablet) {
+    .nav, 
+    .contact    {
+      display: none;
+      }
+    
+}
+@media (min-width: $breakpointTablet) {
+    .nav, 
+    .contact    {
+      display: flex;
+    }
+    
 }

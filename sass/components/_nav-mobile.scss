@@ -1,0 +1,201 @@
+/*   toggle page navigation for mobile   */
+
+
+
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  left: 0; // ma być transformacja z prawej do lewej
+  
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  padding: 48px 40px;
+  overflow-x: hidden;
+  background-color: getColor('bg-light-main');
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 250ms ease-in-out;
+  transform: translateX(0%) translateY(100%) scale(0) rotate(90deg);
+
+  &__toggle-button {
+    display: flex;
+    visibility: visible;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    @extend %transition;
+
+    &:hover,
+    &:focus {
+    color: getColor('accent');
+    }
+  }
+}
+  /* - to poniżej nie ma sensu
+  @media (min-width: $breakpointDesktop) {
+    .mobile-menu {
+      display: none;
+    }
+  } */
+  
+  /*   Przycisk menu toggle   - wyrzucić do */
+  
+  /* @media (min-width: $breakpointDesktop) {
+    .mobile-menu__toggle-button {
+      display: none;
+      visibility: hidden;
+    }
+  }*/
+  
+  /*.js-open-menu {
+    background-color: $logo-white-font-color;
+    border-color: $logo-white-font-color;
+    @extend %transition;
+    &:hover {
+      fill: $logo-white-font-color;
+      background-color: $brand-color;
+      border-color: $logo-white-font-color;
+      padding: 6px 8px 6px 8px;
+      border-radius: 40%;
+    }
+  }*/
+  
+  /*   Linki nawigacji i kontaktu   */
+  
+  .mobile-menu__list-of-pages {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    line-height: 47px;
+    height: 100%;
+    row-gap: 302px;
+  
+    color: getColor('font-dark');
+  
+    .list-of-pages__links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 32px;
+  
+      .list-of-pages__links--sides {
+        display: flex;
+        justify-content: flex-start;
+        align-items: inherit;
+        text-decoration: none;
+        color: getColor('font-dark');
+        @extend %transition;
+        &:hover,
+        &:focus {
+          color: getColor('accent');
+        }
+      }
+      .list-of-pages__links--contacts {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-style: normal;
+        text-decoration: none;
+      }
+      .telephone {
+        color: getColor('accent');
+      }
+      .email {
+        color: getColor('font-grey');
+        padding-bottom: 32px;
+        &:hover,
+        &:focus {
+          color: getColor('accent');
+        }
+      }
+  
+      .list-of-pages__links--social-media {
+        display: flex;
+        justify-content: flex-start;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 22px;
+  
+        .list-of-pages__links--type {
+          padding: 10px;
+          color: getColor('accent');
+          border-right: 1px solid rgba(33, 33, 33, 0.2);
+        }
+      }
+      .list-of-pages__links--social-media a {
+        text-decoration: none;
+      }
+      .list-of-pages__links--social-media a:last-child {
+        border-right: none;
+      }
+    }
+  }
+  
+  /*   Hamburger   */
+  
+  .menu-toggle {
+    display: flex;
+    padding-right: 10px;
+  }
+  @media (min-width: 768px) {
+    .menu-toggle {
+      display: none;
+    }
+  }
+  
+  /*   otwarcie i zamkniecie okna menu   */
+  
+  .close-menu {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    visibility: visible;
+  }
+  .is-open {
+    transform: translateX(100%);
+  }
+  
+  /*   Hybrydy   */
+  
+  .mobile-menu .mobile-menu__toggle-button {
+    position: fixed;
+    display: flex;
+    top: 10px;
+    right: 10px;
+    @extend %transition;
+  }
+   
+  .menu .mobile-menu__toggle-button--links {
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .menu .mobile-menu__toggle-button--links:focus {
+    color: getColor('accent');
+  }
+
+
+  @media (min-width: $breakpointTablet) {
+    .nav-mobile {
+      display: none;
+      &__toggle-button {
+        display: none;
+        visibility: hidden;
+      }
+    }
+    .mobile-menu .mobile-menu__toggle-button {
+      display: none;
+    }
+  }
